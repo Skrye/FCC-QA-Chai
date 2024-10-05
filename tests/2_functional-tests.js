@@ -67,7 +67,7 @@ suite('Functional Tests', function () {
 });
 
 const browser = require('zombie');
-browser.site = 'https://de6a75cc-3ddf-4afe-b6c6-224e746e1df0-00-2jwr7sdtlnasf.kirk.replit.dev/';
+browser.site = 'https://3000-skrye-fccqachai-el059aq7rx8.ws-us116.gitpod.io/';
 const { application } = require('express');
 const bodyParser = require('body-parser');
 const Browser = require('zombie');
