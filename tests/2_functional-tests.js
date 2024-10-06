@@ -67,7 +67,7 @@ suite('Functional Tests', function () {
 });
 
 const Browser = require('zombie');
-Browser.site = 'https://3000-skrye-fccqachai-el059aq7rx8.ws-us116.gitpod.io';
+browser.site = 'https://3000-skrye-fccqachai-el059aq7rx8.ws-us116.gitpod.io';
 
 suite('Functional Tests with Zombie.js', function () {
   const browser = new Browser();
