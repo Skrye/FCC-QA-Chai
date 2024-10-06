@@ -66,19 +66,15 @@ suite('Functional Tests', function () {
   });
 });
 
-const browser = require('zombie');
-browser.site = 'https://de6a75cc-3ddf-4afe-b6c6-224e746e1df0-00-2jwr7sdtlnasf.kirk.replit.dev/';
-const { application } = require('express');
-const bodyParser = require('body-parser');
 const Browser = require('zombie');
+Browser.site = 'https://de6a75cc-3ddf-4afe-b6c6-224e746e1df0-00-2jwr7sdtlnasf.kirk.replit.dev/';
 
 suite('Functional Tests with Zombie.js', function () {
+  this.timeout(5000);
   const browser = new Browser();
   suiteSetup(function(done) {
-    return browser.visit('/',done);
-  })
-  this.timeout(5000);
-
+    return browser.visit('/', done);
+  });
 
 
   suite('Headless browser', function () {
@@ -99,11 +95,10 @@ suite('Functional Tests with Zombie.js', function () {
           done();
         })
       })
-      done();
     });
     // #6
     test('Submit the surname "Vespucci" in the HTML form', function (done) {
-      browser.fill('surname', 'Colombo').then(() => {
+      browser.fill('surname', 'Vespucci').then(() => {
         browser.pressButton('submit', () => {
           browser.assert.success();
           browser.assert.text('span#name', 'Amerigo');
@@ -112,7 +107,6 @@ suite('Functional Tests with Zombie.js', function () {
           done();
         })
       })
-      done();
     });
   });
 });
